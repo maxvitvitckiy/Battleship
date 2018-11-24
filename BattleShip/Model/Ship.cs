@@ -8,6 +8,7 @@ namespace BattleShip.Model
 {
     class Ship
     {
-        
+        List<Deck> Decks;
     }
+
 }

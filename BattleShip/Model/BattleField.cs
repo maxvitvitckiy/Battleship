@@ -9,13 +9,29 @@ namespace BattleShip.Model
     class BattleField
     {
         List<Ship> ships;
-        string keys = "ABCDEFGHTJ";
-        string values = "0123456789";
 
-        public BattleField(List<Ship> sh)
+        public BattleField()
         {
-            ships = sh;
+            ships = new List<Ship>();
         }
         
+        public void ClearShips() { ships = new List<Ship>(); }
+
+        public void AddShip(Ship s)
+        {
+            ships.Add(s);
+        }
+
+        public Deck ReturnDeckAtCoords(int x, int y)
+        {
+            foreach(Ship s in ships)
+            {
+                foreach(Deck d in s.Decks)
+                {
+                    if (d.X == x && d.Y == y) return d;
+                }
+            }
+            return null;
+        }
     }
 }

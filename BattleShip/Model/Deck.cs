@@ -8,20 +8,27 @@ namespace BattleShip.Model
 {
     class Deck
     {
-        char Key { get; }
-        int Value { get; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public bool isHit { get; set; }
 
         public Deck()
         {
-            Key = 'A';
-            Value = 0;
+            X = 0;
+            Y = 0;
+            isHit = false;
         }
 
-        public Deck(char k, int v)
+        public Deck(int x, int y)
         {
-            Key = k;
-            Value = v;
+            X = x;
+            Y = y;
+            isHit = false;
         }
-        
+
+        public void Hit()
+        {
+            isHit = true;
+        }
     }
 }

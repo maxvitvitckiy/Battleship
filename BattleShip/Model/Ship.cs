@@ -8,7 +8,20 @@ namespace BattleShip.Model
 {
     class Ship
     {
-        List<Deck> Decks;
+        public List<Deck> Decks { get; }
+        
+        public Ship()
+        {
+
+        }
+        public Ship(List<Deck> d)
+        {
+            Decks = d;
+        }
+        public void AddDeck( Deck d)
+        {
+            Decks.Add(d);
+        }
     }
 
 }
